@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Energy Bowl Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content wrapper">
+      <p class="eyebrow">Custom Bowl Experience</p>
+      <h1>Build Your Perfect Energy Bowl</h1>
+      <p class="hero__text">
+        Choose your base, fruits, toppings, proteins, and extras. When you place your order,
+        the app creates an <strong>EnergyBowl</strong> object and shows a full summary of your custom bowl.
+      </p>
+    </div>
+  </header>
+
+  <main class="wrapper main-grid">
+    <section class="panel form-panel" aria-labelledby="order-form-heading">
+      <div class="panel__header">
+        <h2 id="order-form-heading">Create Your Bowl</h2>
+        <p>Pick practical ingredients and customize your bowl below.</p>
+      </div>
+
+      <form id="bowlForm" class="order-form">
+        <fieldset>
+          <legend>1. Choose a base</legend>
+          <div class="options-grid options-grid--two">
+            <label class="choice-card">
+              <input type="radio" name="base" value="Acai" checked />
+              <span>Acai</span>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="base" value="Greek Yogurt" />
+              <span>Greek Yogurt</span>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="base" value="Oatmeal" />
+              <span>Oatmeal</span>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="base" value="Chia Pudding" />
+              <span>Chia Pudding</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>2. Select fruits</legend>
+          <div class="options-grid">
+            <label><input type="checkbox" name="fruits" value="Banana" checked /> Banana</label>
+            <label><input type="checkbox" name="fruits" value="Strawberries" /> Strawberries</label>
+            <label><input type="checkbox" name="fruits" value="Blueberries" /> Blueberries</label>
+            <label><input type="checkbox" name="fruits" value="Mango" /> Mango</label>
+            <label><input type="checkbox" name="fruits" value="Kiwi" /> Kiwi</label>
+            <label><input type="checkbox" name="fruits" value="Pineapple" /> Pineapple</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>3. Add toppings</legend>
+          <div class="options-grid">
+            <label><input type="checkbox" name="toppings" value="Granola" checked /> Granola</label>
+            <label><input type="checkbox" name="toppings" value="Coconut Flakes" /> Coconut Flakes</label>
+            <label><input type="checkbox" name="toppings" value="Almonds" /> Almonds</label>
+            <label><input type="checkbox" name="toppings" value="Chia Seeds" /> Chia Seeds</label>
+            <label><input type="checkbox" name="toppings" value="Pumpkin Seeds" /> Pumpkin Seeds</label>
+            <label><input type="checkbox" name="toppings" value="Dark Chocolate Chips" /> Dark Chocolate Chips</label>
+          </div>
+        </fieldset>
+
+        <div class="form-row three-col">
+          <div>
+            <label for="protein">4. Protein add-on</label>
+            <select id="protein" name="protein">
+              <option value="None">None</option>
+              <option value="Vanilla Protein">Vanilla Protein</option>
+              <option value="Chocolate Protein">Chocolate Protein</option>
+              <option value="Peanut Butter">Peanut Butter</option>
+              <option value="Almond Butter">Almond Butter</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="sweetener">5. Sweetener</label>
+            <select id="sweetener" name="sweetener">
+              <option value="None">None</option>
+              <option value="Honey">Honey</option>
+              <option value="Maple Syrup">Maple Syrup</option>
+              <option value="Agave">Agave</option>
+              <option value="Stevia">Stevia</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="size">6. Size</label>
+            <select id="size" name="size">
+              <option value="Small">Small</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="Large">Large</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row two-col">
+          <div>
+            <label for="boost">7. Wellness boost</label>
+            <select id="boost" name="boost">
+              <option value="None">None</option>
+              <option value="Matcha">Matcha</option>
+              <option value="Collagen">Collagen</option>
+              <option value="Flax">Flax</option>
+              <option value="Cacao Nibs">Cacao Nibs</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="instructions">8. Special instructions</label>
+            <textarea id="instructions" name="instructions" rows="4" placeholder="Example: light granola, extra mango, no coconut flakes"></textarea>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <button type="submit" class="btn btn--primary">Place Order</button>
+          <button type="reset" class="btn btn--secondary" id="resetBtn">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <aside class="panel output-panel" aria-labelledby="receipt-heading">
+      <div class="panel__header">
+        <h2 id="receipt-heading">Order Preview</h2>
+        <p>Your receipt, price, and nutrition summary will appear here.</p>
+      </div>
+
+      <div id="orderOutput" class="empty-state">
+        <p>No order yet. Build a bowl and click <strong>Place Order</strong>.</p>
+      </div>
+    </aside>
+  </main>
+
+  <section class="wrapper history-section">
+    <div class="panel">
+      <div class="panel__header history-header">
+        <div>
+          <h2>Past Orders</h2>
+          <p>Orders are saved in local storage so they stay even after refresh.</p>
+        </div>
+        <button class="btn btn--danger" id="clearHistoryBtn" type="button">Clear History</button>
+      </div>
+      <div id="pastOrders" class="history-list empty-state">
+        <p>No saved orders yet.</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
