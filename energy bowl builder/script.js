@@ -1,11 +1,10 @@
 /*
   Energy Bowl Builder
-  -------------------
+  
   This script demonstrates object-oriented JavaScript by creating an
   EnergyBowl class. When the form is submitted, a new EnergyBowl object
   is instantiated and its description, price, and nutrition summary are
-  displayed on the page.
-*/
+  displayed on the page.*/
 
 class EnergyBowl {
   constructor(base, fruits, toppings, protein, sweetener, size, boost, instructions) {
