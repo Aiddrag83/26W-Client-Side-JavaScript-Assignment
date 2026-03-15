@@ -7,6 +7,9 @@
   displayed on the page.*/
 
 class EnergyBowl {
+
+  // This is the constructor and methods that was used 
+
   constructor(base, fruits, toppings, protein, sweetener, size, boost, instructions) {
     this.base = base;
     this.fruits = fruits;
