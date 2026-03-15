@@ -21,7 +21,7 @@ class EnergyBowl {
     this.instructions = instructions;
     this.createdAt = new Date().toLocaleString();
   }
-
+// This is the implementation of the getDescription() and optional calculatePrice() in EnergyBowl Class & Logic
   calculatePrice() {
     const basePrices = {
       Small: 7.99,
