@@ -1,0 +1,46 @@
+/* Initial commit: add base styling */
+
+body {
+    /* Style page background and font */
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+/* Style heading */
+h1 {
+    margin-top: 20px;
+}
+
+/* Style button */
+button {
+    margin: 15px;
+    padding: 10px 15px;
+    border: none;
+    background: #0077cc;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Add hover effect */
+button:hover {
+    background: #005fa3;
+}
+
+/* Style container */
+#userContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Style user cards */
+.userCard {
+    background: white;
+    padding: 15px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
